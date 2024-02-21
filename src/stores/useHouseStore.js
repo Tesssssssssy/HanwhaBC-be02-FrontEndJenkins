@@ -3,7 +3,9 @@ import axios from "axios";
 
 // const backend = "http://13.125.229.218:8080";
 // const backend = "http://192.168.0.115:8080";
-const backend = "http://52.78.9.103:9999/api"; 
+// const backend = "http://52.78.9.103:9999/api"; 
+// const backend = "http://localhost:9999/api"; 
+const backend = "http://110.110.110.135:9999/api"; 
 
 export const useHouseStore = defineStore("house", {
   state: () => ({
