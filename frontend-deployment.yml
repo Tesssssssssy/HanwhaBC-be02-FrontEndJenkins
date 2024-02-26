@@ -1,23 +1,27 @@
 apiVersion: apps/v1
-kind: Deployment
-metadata:
+kind: Deployment 
+metadata: 
   name: frontend-deployment
-spec:
-  selector:
-    matchLabels:
-      type: frontend
-  replicas: 3
-  strategy:
-    type: RollingUpdate
-  minReadySeconds: 10
+spec: 
+  replicas: 2
+  strategy: 
+    type: RollingUpdate 
+  revisionHistoryLimit: 1 
+  selector: 
+    matchLabels: 
+      type: frontend 
   template:
-    metadata:
-      labels:
-        type: frontend
-    spec:
-      containers:
-        - name: container
-          image: tessssssssy/campingontopfrontend:8.VERSION
-          ports:
-            - containerPort: 8080
-      terminationGracePeriodSeconds: 5
+    metadata: 
+      labels: 
+        type: frontend 
+    spec: 
+      containers: 
+        - name: frontend-container
+          image: tessssssssy/frontend:9.VERSION 
+          resources: 
+            requests: 
+              memory: "512m" 
+              cpu: "100m" 
+            limits: 
+              memory: "3Gi" 
+              cpu: "2000m" 
