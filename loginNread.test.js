@@ -14,7 +14,9 @@ describe("로그인", () => {
   }, 30000);
 
   afterAll(async () => {
-    await driver.quit();
+    if (driver) {
+      await driver.quit();  
+    }
   }, 40000);
 
   test("정상 로그인", async () => {
